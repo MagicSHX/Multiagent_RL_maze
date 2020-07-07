@@ -1,5 +1,7 @@
 import random
 from random import randint
+import pandas as pd
+import torch
 
 def exchange_value_in_scequence(a, b):
     if a > b:
@@ -38,3 +40,11 @@ def agent_generation(row, column, no_of_agent):
         point = [randint(1, row - 1) + row, randint(1, column - 1) + column]
         agent.append(point)
     return agent
+
+def data_input(file_path):
+    #to explore: remove duplicatioin - if both input and score are same, then remove duplication
+    data_original = pd.read_csv(file_path)
+    #data_original = data_original.drop_duplicates(subset=None, keep='first', inplace=False)
+    torch_tensor = torch.tensor(data_original.values, dtype=torch.float)
+    #print(torch_tensor)
+    return torch_tensor

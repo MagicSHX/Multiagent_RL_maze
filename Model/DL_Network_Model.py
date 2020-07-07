@@ -12,9 +12,9 @@ class Net(nn.Module):
         #self.conv2 = nn.Conv2d(6, 16, 5)
         #https://stackoverflow.com/questions/47128044/calculating-input-and-output-size-for-conv2d-in-pytorch-for-image-classification
         
-        self.fc1 = nn.Linear(641, 243)
+        self.fc1 = nn.Linear(651, 243)
         self.dropout1 = nn.Dropout(p=0.9, inplace=False)
-        self.fc2 = nn.Linear(27, 81)
+        self.fc2 = nn.Linear(243, 81)
         #inplace: https://stackoverflow.com/questions/58589128/what-is-the-meaning-of-in-place-in-dropout
         self.dropout2 = nn.Dropout(p=0.8, inplace=False)
         self.fc3 = nn.Linear(81, 27)
