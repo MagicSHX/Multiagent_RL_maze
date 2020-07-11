@@ -30,14 +30,14 @@ def wall_generation(row, column, no_of_wall):
 def target_generation(row, column, no_of_target):
     target = []
     for i in range(0, no_of_target):
-        point = [randint(1, row - 1) + row, randint(1, column - 1) + column]
+        point = [randint(1, row - 2) + row, randint(1, column - 2) + column]
         target.append(point)
     return target
 
 def agent_generation(row, column, no_of_agent):
     agent = []
     for i in range(0, no_of_agent):
-        point = [randint(1, row - 1) + row, randint(1, column - 1) + column]
+        point = [randint(1, row - 2) + row, randint(1, column - 2) + column]
         agent.append(point)
     return agent
 
